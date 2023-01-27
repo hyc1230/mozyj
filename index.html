@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>膜拜 zyj 大佬</title>
+        <script>
+            var ing = 0, num = 0;
+            var mo = function () {
+                if (ing != 0) {
+                    window.alert("上次还没有膜完哦，膜佬就要专心致志！");
+                    return;
+                }
+                document.getElementById("img").src = "./2.png";
+                ing = 1;
+                setTimeout(() => {
+                    num += parseInt(document.getElementById("tim").value);
+                    document.getElementById("numdisplay").innerHTML = num.toString();
+                    document.getElementById("img").src = "./1.png";
+                    ing = 0;
+                }, parseInt(document.getElementById("tim").value) * 1000);
+            }
+        </script>
+    </head>
+    <body style="padding-left: 20%; padding-right: 20%">
+        <img src="./1.png" id="img" width="100%">
+        <center>
+            <button onclick="mo()">膜拜！</button>
+            <input id="tim" placeholder="多久呢（整数）">秒
+            <br>
+            <p>你已经膜拜了 <font id="numdisplay" color="#FF0000">0</font> 秒！</p>
+        </center>
+    </body>
+</html>
